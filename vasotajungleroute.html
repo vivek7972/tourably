@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kaas Plateau – Tourably</title>
+    <title>Vasota Fort – Tourably</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -50,12 +50,15 @@
       .hero {
         height: 90vh;
         background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
-          url("/Images/kaas.jpg") center/cover no-repeat;
+          url("/Images/vasota-hero.jpg") center/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         color: #fff;
+        background-image: url(/images/vasotajunglerouteback.png);
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       .hero h1 {
@@ -84,6 +87,7 @@
         background: var(--green);
         color: #fff;
       }
+
       .btn.outline {
         border: 2px solid #fff;
         color: #fff;
@@ -116,7 +120,6 @@
         font-size: 1.05rem;
       }
 
-      /* SECTIONS */
       section {
         padding: 80px 20px;
       }
@@ -229,54 +232,46 @@
         text-align: center;
         padding: 80px 20px;
       }
-
-      .final-cta h2 {
-        margin-bottom: 12px;
-      }
-
-      .hero{
-        background-image:   url(/Images/kass1.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
     </style>
   </head>
+
   <body>
     <!-- HERO -->
     <div class="hero">
       <div>
-        <h1>Kaas Plateau</h1>
-        <p>UNESCO World Natural Heritage • Maharashtra’s Valley of Flowers</p>
-        <a href="#packages" class="btn green">View Packages</a>
-        <a href="#about" class="btn outline">Explore More</a>
+        <h1>Vasota Jungle Route</h1>
+        <p>Dense Jungle Trek • Sahyadri Range • Satara</p>
+        <a href="#packages" class="btn green">View Trek Packages</a>
+        <a href="#about" class="btn outline">Explore Route</a>
       </div>
     </div>
 
     <!-- INFO BAR -->
     <div class="info-bar">
       <div class="info-item">
-        <span> Distance</span><strong>24 km from Satara</strong>
+        <span> Distance</span><strong>65 km from Satara</strong>
       </div>
       <div class="info-item">
-        <span> Best Time</span><strong>Aug – Oct</strong>
+        <span> Best Time</span><strong>Oct – Feb</strong>
       </div>
       <div class="info-item">
-        <span> Entry Fee</span><strong>₹100 – ₹150</strong>
+        <span> Trek Type</span><strong>Jungle Route</strong>
       </div>
       <div class="info-item">
-        <span> Category</span><strong>Nature</strong>
+        <span> Difficulty</span><strong>Moderate to Hard</strong>
       </div>
     </div>
 
     <!-- ABOUT -->
     <section id="about" class="about">
       <div class="container">
-        <h2>About Kaas Plateau</h2>
+        <h2>About Vasota Jungle Route</h2>
         <p class="muted">
-          Kaas Plateau is a seasonal wonderland near Satara, where thousands of
-          endemic wildflowers bloom during monsoon. Recognized as a UNESCO World
-          Natural Heritage Site, it offers unmatched biodiversity, photography
-          opportunities, and peaceful nature experiences.
+          Vasota Fort is one of the most adventurous jungle treks in Satara,
+          located inside the Koyna Wildlife Sanctuary. The jungle route starts
+          from Bamnoli and passes through dense forests, river crossings, and
+          wildlife zones. The fort offers breathtaking views of Shivsagar Lake
+          and is a paradise for nature lovers and trekkers.
         </p>
       </div>
     </section>
@@ -286,9 +281,9 @@
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img src="/Images/kassV2.avif" />
-          <img src="/Images/kassV3.jpeg" />
-          <img src="/Images/KassV4.jpg" />
+          <img src="/images/vasotajunglerouteV1.png" />
+          <img src="/images/vasotajunglerouteV2.png" />
+          <img src="/images/vasotajunglerouteV3.png" />
         </div>
       </div>
     </section>
@@ -296,12 +291,11 @@
     <!-- MAP -->
     <section>
       <div class="container">
-        <h2>Location & Route</h2>
+        <h2>Location & Jungle Route</h2>
         <div class="map">
           <iframe
-            src="https://www.google.com/maps?q=Kaas%20Plateau,%20Maharashtra&output=embed"
+            src="https://www.google.com/maps?q=Vasota%20Fort,%20Satara&output=embed"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
       </div>
@@ -310,24 +304,24 @@
     <!-- PACKAGES -->
     <section id="packages" class="packages">
       <div class="container">
-        <h2>Choose Your Experience</h2>
+        <h2>Choose Your Trek</h2>
         <div class="package-grid">
           <div class="package-card">
-            <h3>Single Spot Visit</h3>
-            <p class="muted">Perfect for short and peaceful exploration</p>
-            <div class="price">₹500 – ₹700</div>
-            <a href="/HTML/book.html?place=kaas&type=single" class="btn green"
-              >Book Single Visit</a
-            >
+            <h3>Jungle Trek (One Day)</h3>
+            <p class="muted">Forest route with guide and permits</p>
+            <div class="price">₹1200 – ₹1500</div>
+            <a href="/HTML/book.html?place=vasota&type=jungle" class="btn green">
+              Book Jungle Trek
+            </a>
           </div>
 
           <div class="package-card">
-            <h3>Full Satara Scenic Tour</h3>
-            <p class="muted">Includes Kaas, Thoseghar & Chalkewadi</p>
-            <div class="price">₹5000</div>
-            <a href="/HTML/book.html?place=kaas&type=full" class="btn green"
-              >Book Full Tour</a
-            >
+            <h3>Boating + Jungle Trek</h3>
+            <p class="muted">Boat ride from Bamnoli + guided trek</p>
+            <div class="price">₹2500</div>
+            <a href="/HTML/book.html?place=vasota&type=full" class="btn green">
+              Book Full Experience
+            </a>
           </div>
         </div>
       </div>
@@ -340,13 +334,13 @@
         <div class="review-grid">
           <div class="review">
             <div class="stars">★★★★★</div>
-            <p>Absolutely magical during monsoon. A must visit.</p>
-            <strong>— Rohit, Pune</strong>
+            <p>Best jungle trek in Maharashtra. Raw and thrilling.</p>
+            <strong>— Akash, Satara</strong>
           </div>
           <div class="review">
             <div class="stars">★★★★☆</div>
-            <p>Beautiful and peaceful. Well managed.</p>
-            <strong>— Anjali, Mumbai</strong>
+            <p>Dense forest, amazing views, must visit for trekkers.</p>
+            <strong>— Sneha, Kolhapur</strong>
           </div>
         </div>
       </div>
@@ -354,8 +348,8 @@
 
     <!-- FINAL CTA -->
     <div class="final-cta">
-      <h2>Ready to Explore Kaas Plateau?</h2>
-      <p>Choose your package and start your journey with Tourably</p>
+      <h2>Ready for the Vasota Jungle Adventure?</h2>
+      <p>Book your trek and experience raw Sahyadri wilderness</p>
       <a href="#packages" class="btn outline">Book Now</a>
     </div>
   </body>
