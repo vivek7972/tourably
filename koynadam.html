@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koyna Dam – Tourably</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --green: #16a34a;
+        --blue: #2563eb;
+        --yellow: #facc15;
+        --dark: #0f172a;
+        --muted: #64748b;
+
+        --bg-main: #f8fafc;
+        --bg-soft-green: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+        --bg-soft-blue: linear-gradient(135deg, #eff6ff, #f8fafc);
+        --bg-soft-yellow: linear-gradient(135deg, #fefce8, #ffffff);
+
+        --card: #ffffff;
+        --radius: 18px;
+        --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background: var(--bg-main);
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      /* HERO */
+      .hero {
+        height: 90vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+          url("/Images/koyna-dam.jpg") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background-image: url(/images/koynadamBack.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        max-width: 700px;
+        margin: auto;
+        font-size: 1.15rem;
+        margin-bottom: 32px;
+      }
+
+      .btn {
+        padding: 14px 30px;
+        border-radius: 999px;
+        font-weight: 600;
+        display: inline-block;
+        transition: 0.3s ease;
+      }
+
+      .btn.green {
+        background: var(--green);
+        color: #fff;
+      }
+
+      .btn.outline {
+        border: 2px solid #fff;
+        color: #fff;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      /* INFO BAR */
+      .info-bar {
+        max-width: 1100px;
+        margin: -50px auto 80px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        border-radius: var(--radius);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        padding: 28px 32px;
+        gap: 24px;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .about {
+        background: var(--bg-soft-green);
+      }
+
+      .gallery {
+        background: var(--bg-soft-blue);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 420px;
+        border-radius: var(--radius);
+        border: none;
+        box-shadow: var(--shadow);
+      }
+
+      .packages {
+        background: var(--bg-soft-yellow);
+      }
+
+      .package-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .package-card {
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 32px;
+      }
+
+      .price {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      .reviews {
+        background: var(--bg-soft-blue);
+      }
+
+      .review {
+        background: #fff;
+        padding: 28px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .final-cta {
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        color: #fff;
+        text-align: center;
+        padding: 80px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h1>Koyna Dam</h1>
+        <p>India’s Largest Earthquake-Resistant Dam • Satara, Maharashtra</p>
+        <a href="#packages" class="btn green">View Packages</a>
+        <a href="#about" class="btn outline">Explore More</a>
+      </div>
+    </div>
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
+      <div><span>Distance</span><strong>95 km from Satara</strong></div>
+      <div><span>Best Time</span><strong>Jul – Feb</strong></div>
+      <div><span>Entry Fee</span><strong>Free</strong></div>
+      <div><span>Category</span><strong>Engineering & Nature</strong></div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Koyna Dam</h2>
+        <p class="muted">
+          Koyna Dam is one of the largest dams in Maharashtra and a major source
+          of hydroelectric power. Located in the Western Ghats near Koyna
+          Wildlife Sanctuary, the dam is surrounded by dense forests, scenic
+          viewpoints, and the serene Shivsagar Lake.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="/images/konyadamV1.png" />
+          <img src="/images/konyadamV2.png" />
+          <img src="/images/konyadamV3.png" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section>
+      <div class="container">
+        <h2>Location & Route</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=Koyna%20Dam,%20Satara&output=embed"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages" class="packages">
+      <div class="container">
+        <h2>Choose Your Experience</h2>
+        <div class="package-grid">
+          <div class="package-card">
+            <h3>Koyna Dam Visit</h3>
+            <p class="muted">Ideal for nature and engineering lovers</p>
+            <div class="price">₹700 – ₹900</div>
+            <a href="#" class="btn green">Book Visit</a>
+          </div>
+
+          <div class="package-card">
+            <h3>Koyna Wildlife Tour</h3>
+            <p class="muted">Includes dam + wildlife sanctuary</p>
+            <div class="price">₹4500</div>
+            <a href="#" class="btn green">Book Full Tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="container">
+        <h2>Traveler Reviews</h2>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>Amazing view and peaceful environment.</p>
+          <strong>— Saurabh, Kolhapur</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="final-cta">
+      <h2>Ready to Visit Koyna Dam?</h2>
+      <p>Book your trip with Tourably today</p>
+      <a href="#packages" class="btn outline">Book Now</a>
+    </div>
+  </body>
+</html>
