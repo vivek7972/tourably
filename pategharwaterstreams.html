@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pateghar Water Streams – Tourably</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --green: #16a34a;
+        --blue: #2563eb;
+        --yellow: #facc15;
+        --dark: #0f172a;
+        --muted: #64748b;
+
+        --bg-main: #f8fafc;
+        --bg-soft-green: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+        --bg-soft-blue: linear-gradient(135deg, #eff6ff, #f8fafc);
+        --bg-soft-yellow: linear-gradient(135deg, #fefce8, #ffffff);
+
+        --card: #ffffff;
+        --radius: 18px;
+        --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background: var(--bg-main);
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* HERO */
+      .hero {
+        height: 90vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+          url("/Images/pateghar_hero.jpg") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 5vw, 4.2rem);
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .hero p {
+        max-width: 700px;
+        margin: auto;
+        font-size: 1.15rem;
+        opacity: 0.95;
+        margin-bottom: 32px;
+      }
+
+      .btn {
+        padding: 14px 30px;
+        border-radius: 999px;
+        font-weight: 600;
+        display: inline-block;
+        transition: 0.3s ease;
+      }
+
+      .btn.green {
+        background: var(--green);
+        color: #fff;
+      }
+      .btn.outline {
+        border: 2px solid #fff;
+        color: #fff;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      /* INFO BAR */
+      .info-bar {
+        max-width: 1100px;
+        margin: -50px auto 80px;
+        background: #fff;
+        box-shadow: var(--shadow);
+        border-radius: var(--radius);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        padding: 28px 32px;
+        gap: 24px;
+      }
+
+      .info-item span {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .info-item strong {
+        font-size: 1.05rem;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 80px 20px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      /* ABOUT */
+      .about {
+        background: var(--bg-soft-green);
+      }
+
+      .about p {
+        max-width: 800px;
+        font-size: 1.05rem;
+      }
+
+      /* GALLERY */
+      .gallery {
+        background: var(--bg-soft-blue);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-grid img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      /* MAP */
+      .map iframe {
+        width: 100%;
+        height: 420px;
+        border-radius: var(--radius);
+        border: none;
+        box-shadow: var(--shadow);
+      }
+
+      /* PACKAGES */
+      .packages {
+        background: var(--bg-soft-yellow);
+      }
+
+      .package-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .package-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .price {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--green);
+      }
+
+      /* REVIEWS */
+      .reviews {
+        background: var(--bg-soft-blue);
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .review {
+        background: #fff;
+        padding: 28px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .stars {
+        color: var(--yellow);
+      }
+
+      /* FINAL CTA */
+      .final-cta {
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        color: #fff;
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .final-cta h2 {
+        margin-bottom: 12px;
+      }
+
+      .hero{
+        background-image: url(/Images/pateghar_hero.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h1>Pateghar Water Streams</h1>
+        <p>Serene Water Streams & Nature Escape in Satara</p>
+        <a href="#packages" class="btn green">View Packages</a>
+        <a href="#about" class="btn outline">Explore More</a>
+      </div>
+    </div>
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
+      <div class="info-item">
+        <span>📍 Location</span><strong>Satara, Maharashtra</strong>
+      </div>
+      <div class="info-item">
+        <span>🕒 Best Time</span><strong>Monsoon (Jun – Sep)</strong>
+      </div>
+      <div class="info-item">
+        <span>🎟 Entry Fee</span><strong>Free</strong>
+      </div>
+      <div class="info-item">
+        <span>🌿 Category</span><strong>Nature & Adventure</strong>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Pateghar Water Streams</h2>
+        <p class="muted">
+          Pateghar Water Streams is a hidden natural attraction in Satara, known for its flowing streams,
+          lush greenery, and peaceful surroundings. It is perfect for trekking, photography, and nature lovers.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <img src="/Images/pateghar1.jpg" />
+          <img src="/Images/pateghar2.jpg" />
+          <img src="/Images/pateghar3.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section>
+      <div class="container">
+        <h2>Location & Route</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=Pateghar%20Water%20Streams,%20Satara&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages" class="packages">
+      <div class="container">
+        <h2>Choose Your Experience</h2>
+        <div class="package-grid">
+          <div class="package-card">
+            <h3>Trekking & Exploration</h3>
+            <p class="muted">Trek along the streams and enjoy nature</p>
+            <div class="price">₹0 – ₹0</div>
+            <a href="/HTML/book.html?place=pateghar&type=trek" class="btn green"
+              >Book Trek</a
+            >
+          </div>
+
+          <div class="package-card">
+            <h3>Picnic & Relaxation</h3>
+            <p class="muted">Spend time near the streams with friends & family</p>
+            <div class="price">₹0 – ₹0</div>
+            <a href="/HTML/book.html?place=pateghar&type=picnic" class="btn green"
+              >Book Picnic</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="container">
+        <h2>Traveler Reviews</h2>
+        <div class="review-grid">
+          <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Beautiful serene place, perfect for monsoon getaway.</p>
+            <strong>— Rohan, Pune</strong>
+          </div>
+          <div class="review">
+            <div class="stars">★★★★☆</div>
+            <p>Loved the flowing streams and peaceful nature walks.</p>
+            <strong>— Priya, Satara</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="final-cta">
+      <h2>Ready to Explore Pateghar Water Streams?</h2>
+      <p>Plan your nature escape with Tourably</p>
+      <a href="#packages" class="btn outline">Book Now</a>
+    </div>
+  </body>
+</html>
