@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourably – Discover Satara</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/CSS/homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="logo"><img src="/Images/tourably.png" alt="Tourably Logo"></div>
+    <nav>
+      <a href="/HTML/homepage.html">Home</a>
+      <a href="/HTML/Explorenow.html">Explore</a>
+      <a href="/HTML/services.html">Services</a>
+
+<div class="profile-dropdown" id="profileDropdown">
+  <span class="profile-text" id="profileText">Profile </span>
+  <ul class="dropdown-menu" id="dropdownMenu">
+    <li><a href="/HTML/profile.html">Profile</a></li>
+    <li><a href="/HTML/terms.html">Terms & Conditions</a></li>
+    <li><a href="/HTML/privacy.html">Privacy Policy</a></li>
+    <li><a href="/HTML/about.html">About</a></li>
+    <li><a href="/HTML/feedback.html">Feedback</a></li>
+    <li id="logoutBtn">Logout</li>
+  </ul>
+</div>    </nav>
+  </div>
+</header>
+
+
+
+<style>
+ /* --- Profile Dropdown Text Version --- */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-text {
+  color: white; /* match your navbar links */
+  font-weight: 500;
+  padding: 8px 12px;
+  display: inline-block;
+}
+/* Match your navbar links hover effect *//* Base state: matches navbar */
+.profile-text {
+  color: white;           /* normal color */
+  font-weight: 500;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: color 0.3s ease; /* only color transition */
+  text-decoration: none;  /* remove underline */
+  border-bottom: none;    /* remove any underline */
+}
+
+/* Hover state */ 
+.profile-text:hover {
+  color: #1f8f7a;         /* green only on hover */
+  border-bottom: none;     /* no underline */
+}
+
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #fff;
+  color: #333;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+#logoutBtn {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #ffe6e6;
+}
+
+/* Floating AI Agent Icons */
+.ai-agents {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 9999;
+}
+
+.agent-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg,#22c55e,#3b82f6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.agent-icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.agent-icon:hover {
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.5);
+}
+
+/* Optional subtle float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.agent-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+#logoutBtn {
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #ffe6e6;
+}
+
+</style>
+
+
+<script>
+  const profileText = document.getElementById('profileText');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  // Toggle dropdown on click
+  profileText.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener('click', () => {
+    dropdownMenu.style.display = 'none';
+  });
+
+  // Logout button placeholder
+  logoutBtn.addEventListener('click', () => {
+    alert('Logout clicked! Connect Firebase Auth signOut() here.');
+    dropdownMenu.style.display = 'none';
+  });
+</script>
+
+
+<!-- PAGE 1 -->
+<section class="hero">
+  <h1>Discover Satara Like Never Before</h1>
+  <p style="color: #c7e1ff;">Find hidden gems, explore nature, and plan your perfect journey.</p>
+  <div class="search pro-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search hidden places, forts, waterfalls, routes…" />
+    <button class="search-action">Explore</button>
+  </div>
+  
+<!-- SEARCH FILTER SECTION -->
+<section class="home-filter">
+
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="nature">Nature</button>
+    <button class="filter-btn" data-filter="fort">Forts</button>
+    <button class="filter-btn" data-filter="waterfall">Waterfalls</button>
+    <button class="filter-btn" data-filter="historical">Historical</button>
+  </div>   <div class="filter-grid">
+
+      <div class="cards-carousel">
+  <button class="carousel-btn prev-btn">‹</button>
+  <button class="carousel-btn next-btn">›</button>
+
+  <div class="carousel-viewport">
+    <div class="cards-container">
+
+
+            <!-- NATURE -->
+            <a href="/HTML/Kaasplateau.html" class="filter-card" data-category="nature">
+              <img src="/Images/kaasplateau.jpg">
+              <h4>Kaas Plateau</h4>
+              <p>Valley of Flowers</p>
+            </a>
+
+            <a href="/HTML/chalkiwadi.html" class="filter-card" data-category="nature">
+              <img src="/Images/chalkewadi.jpg">
+              <h4>Chalkewadi</h4>
+              <p>Windmill Plateau</p>
+            </a>
+
+            <!-- FORTS -->
+            <a href="/HTML/sajjangad.html" class="filter-card" data-category="fort">
+              <img src="/Images/sajjangadfort.jpg">
+              <h4>Sajjangad Fort</h4>
+              <p>Historic Pilgrimage Fort</p>
+            </a>
+
+            <a href="/HTML/vasota.html" class="filter-card" data-category="fort">
+              <img src="/Images/vasota (2).jpg">
+              <h4>Vasota Fort</h4>
+              <p>Jungle Trek Fort</p>
+            </a>
+
+            <!-- WATERFALLS -->
+            <a href="/HTML/nanafadnaviswada.html" class="filter-card" data-category="waterfall">
+              <img src="/Images/thoseghar.jpg">
+              <h4>Thoseghar</h4>
+              <p>500 ft Waterfall</p>
+            </a>
+
+            <a href="/HTML/lingmalaWaterfall.html" class="filter-card" data-category="waterfall">
+              <img src="/Images/lingmala.jpg">
+              <h4>Lingmala</h4>
+              <p>Seasonal Falls</p>
+            </a>
+
+            <!-- HISTORICAL -->
+            <a href="/HTML/Kashibai Museum.html" class="filter-card" data-category="historical">
+              <img src="/Images/kashibai.jpg">
+              <h4>Kashibai Museum</h4>
+              <p>Local Heritage</p>
+            </a>
+
+            <a href="/HTML/ajinkyatara.html" class="filter-card" data-category="historical">
+              <img src="/Images/ajinkyatara.jpg">
+              <h4>Ajinkyatara</h4>
+              <p>Maratha Fort</p>
+            </a>
+
+            <a href="/HTML/mandapghal.html" class="filter-card" data-category="historical">
+              <img src="/Images/mandapghal.jpg">
+              <h4>Mandap Ghal</h4>
+              <p>Ancient Cave</p>
+            </a>
+              <a href="/HTML/nimbalkarpalace.html" class="filter-card" data-category="historical">
+              <img src="/Images/nimbalkar.avif">
+              <h4>Nimbalkar Palace</h4>
+              <p>Ancient Cave</p>
+            </a>
+              <a href="/HTML/koynawildlife.html" class="filter-card" data-category="historical">
+              <img src="/Images/koyna.jpeg">
+              <h4>Koyna Dam</h4>
+              <p>Ancient Cave</p>
+            </a>
+              <a href="/HTML/nanafadnaviswada.html" class="filter-card" data-category="historical">
+              <img src="/Images/Nana Fadnavis Wada & Menavali Ghat.jpeg">
+              <h4>Nana Fadanvis Wada</h4>
+              <p>Ancient Cave</p>
+            </a>
+              <a href="/HTML/lordshiva.html" class="filter-card" data-category="historical">
+              <img src="/Images/lordshivastatue.png">
+              <h4>Biggest Statue Of Lord Shiva</h4>
+              <p>Ancient Cave</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+
+</section>
+</section>
+
+
+
+<section class="why">
+  <!-- <h2 style="color: white;">Why Tourably?</h2>
+  <p class="why-sub" style="color: #c7e1ff;">Trusted by travelers exploring Satara’s hidden beauty</p> -->
+
+ <section class="why-tourably">
+  <h2>Why Tourably?</h2>
+  <p class="subtitle">Trusted by travelers exploring Satara's hidden beauty</p>
+
+  <div class="why-cards">
+
+    <a href="#" class="why-card">
+      <div class="icon-box green">
+        <img src="/Images/curated locations.jpeg" alt="Curated Locations">
+      </div>
+      <h3>Curated Locations</h3>
+      <p>Hand-picked destinations verified by real travelers</p>
+    </a>
+
+    <a href="#" class="why-card"> 
+      <div class="icon-box blue">
+        <img src="/Images/accuarete distance.jpeg" alt="Accurate Distance">
+      </div>
+      <h3>Accurate Distance</h3>
+      <p>Exact distance, routes & time before you travel</p>
+    </a>
+
+    <a href="#" class="why-card">
+      <div class="icon-box yellow">
+        <img src="/Images/planning.jpeg" alt="Smart Planning">
+      </div>
+      <h3>Smart Planning</h3>
+      <p>Choose full tours or single-spot trips easily</p>
+    </a>
+
+  </div>
+</section>
+
+
+  <h3 class="traveler-title">What Travelers Say About Tourably</h3>
+  <p class="traveler-sub">Real experiences from people who explored Satara with us</p>
+
+  <div class="traveler-cards">
+    <div class="traveler">
+      <img src="/Images/young-indian-man-dressed-trendy-outfit-monitoring-information-from-social-networks_231208-2766.avif" alt="Traveler">
+      <h4>Rohit Sharma</h4>
+      <p class="addr">Pune, Maharashtra</p>
+      <p class="review">"Hello Tourably! Thank you for making our Satara trip smooth and memorable. Every spot was perfectly planned."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="traveler">
+      <img src="/Images/download.jpeg" alt="Traveler">
+      <h4>Anjali Deshmukh</h4>
+      <p class="addr">Mumbai, Maharashtra</p>
+      <p class="review">"Thank you Tourably team! Loved the routes, distance accuracy and peaceful locations. Will travel again."</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+    <div class="traveler">
+      <img src="/Images/download (1).jpeg" alt="Traveler">
+      <h4>Akash Patil</h4>
+      <p class="addr">Kolhapur, Maharashtra</p>
+      <p class="review">"Great experience with Tourably. Thank you for such a well-organized and budget-friendly journey."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Explore by Category</h2>
+  <div class="grid">
+  <a href="/HTML/category-nature.html" class="cat cat-img">
+  <img src="/Images/kaasplateau.jpg" alt="Nature">
+  <div class="cat-overlay">
+    <h4>🌿Nature & Scenic Beauty</h4>
+    <p class="muted">Pristine landscapes & Healing Nature</p>
+  </div>
+</a>
+
+<a href="/HTML/category-forts.html" class="cat cat-img">
+  <img src="/Images/ajinkyatara.jpg" alt="Forts">
+  <div class="cat-overlay">
+    <h4>🏰Forts & Hill Forts</h4>
+    <p class="muted">Historic forts With Rich History</p>
+  </div>
+</a>
+
+<a href="/HTML/category-waterfall.html" class="cat cat-img">
+  <img src="/Images/thoseghar.jpg" alt="Waterfalls">
+  <div class="cat-overlay">
+    <h4>💦Waterfalls</h4>
+    <p class="muted">Breathtaking falls</p>
+  </div>
+</a>
+
+<a href="/HTML/category-historicalheritage.html" class="cat cat-img">
+  <img src="/Images/natraj mandir.jpeg" alt="Historical">
+  <div class="cat-overlay">
+    <h4>🏛️Historical & Heritage </h4>
+    <p class="muted">Enjoy Timeless monuments </p>
+  </div>
+</a>
+
+<a href="#" class="cat cat-img">
+  <img src="/Images/baramotichi vihir.jpg" alt="Hidden Spots">
+  <div class="cat-overlay">
+    <h4>🗺️Hidden & Offbeat Places</h4>
+    <p class="muted">Offbeat places(Hidden Places)</p>
+  </div>
+</a>
+
+<a href="#" class="cat cat-img">
+  <img src="/Images/natraj mandir.jpeg" alt="Hidden Spots">
+  <div class="cat-overlay">
+    <h4>🛕Feel Spiritual Places</h4>
+    <p class="muted"> destinations of faith and devotion</p>
+  </div>
+</a>
+
+<a href="#" class="cat cat-img">
+  <img src="/Images/vasota jungle trek.jpeg" alt="Hidden Spots">
+  <div class="cat-overlay">
+    <h4>🥾Adventure & Trekking</h4>
+    <p class="muted">Thrilling treks and nature adventures</p>
+  </div>
+</a>
+
+<a href="#" class="cat cat-img">
+  <img src="/Images/baramotichi vihir.jpg" alt="Hidden Spots">
+  <div class="cat-overlay">
+    <h4>🍓Culture, Food & Local</h4>
+    <p class="muted">Visit Authentic local life</p>
+  </div>
+</a>
+
+
+  </div>
+</section>
+
+<section>
+  <section>
+  <h2>Featured Places</h2>
+  <div class="grid">
+    <a href="/HTML/Kaasplateau.html" class="place">
+<div class="img" style="background-image:url('/Images/kaasplateau.jpg')"></div>
+      <div class="p">
+        <h4>Kaas Plateau</h4>
+        <p class="muted">Valley of Flowers • 24 km</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </a>
+    <a href="/HTML/Thoseghar.html" class="place">
+<div class="img" style="background-image:url('/Images/thoseghar\ waterfall.jpeg')"></div>
+      <div class="p">
+        <h4>Thoseghar Waterfall</h4>
+        <p class="muted">500 ft Cascade • 20 km</p>
+        <div class="stars">★★★★★</div>
+      </div>
+    </a>
+    <a href="/HTML/sajjangad.html" class="place">
+<div class="img" style="background-image:url('/Images/sajjangadfort.jpg')"></div>
+      <div class="p">
+        <h4>Sajjangad Fort</h4>
+        <p class="muted">Historic Fort • 15 km</p>
+        <div class="stars">★★★★☆</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<br>
+
+<section class="explore-cta">
+  <h2>Start Exploring Satara Today</h2>
+  <p>Discover hidden gems and create unforgettable memories</p>
+  <a href="/HTML/Explorenow.html" class="cta-btn">Explore Now</a>
+</section>
+
+
+<!-- PAGE 2 -->
+<section>
+  <section class="destinations">
+  <h2>All Destinations</h2>
+  <div class="dest-grid">
+
+    <a class="dest-card" href="/HTML/Kaasplateau.html">
+      <img src="/Images/kaasplateau.jpg" alt="Kaas Plateau">
+      <div class="dest-content">
+        <h4>Kaas Plateau</h4>
+        <p>Valley of Flowers</p>
+        <span class="km">📍 25 km</span>
+        <span class="badge green">Popular Today</span>
+        <span class="btn green">View Details</span>
+      </div>
+    </a>
+
+    <a class="dest-card" href="/HTML/thoseghar.html">
+      <img src="/Images/thoseghar.jpg" alt="Thoseghar Waterfall">
+      <div class="dest-content">
+        <h4>Thoseghar Waterfall</h4>
+        <p>500 ft cascade</p>
+        <span class="km">📍 20 km</span>
+        <span class="badge blue">Trending</span>
+        <span class="btn blue">View Details</span>
+      </div>
+    </a>
+
+    <a class="dest-card" href="/HTML/sajjangad.html">
+      <img src="/Images/sajjangadfort.jpg" alt="Sajjangad Fort">
+      <div class="dest-content">
+        <h4>Sajjangad Fort</h4>
+        <p>Historic pilgrimage site</p>
+        <span class="km">📍 18 km</span>
+        <span class="badge yellow">Heritage</span>
+        <span class="btn yellow">View Details</span>
+      </div>
+    </a>
+
+    <a class="dest-card" href="/HTML/chalkiwadi.html">
+      <img src="/Images/chalkewadi.jpg" alt="Chalkewadi Windmills">
+      <div class="dest-content">
+        <h4>Chalkewadi Windmills</h4>
+        <p>Scenic windmill farm</p>
+        <span class="km">📍 35 km</span>
+        <span class="badge blue">Adventure</span>
+        <span class="btn blue">View Details</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section>
+  <section class="full-tour">
+  <h2>Full Tour Packages</h2>
+  <p class="sub">Ideal for families, groups, or full‑day travelers</p>
+  <div class="tour-card">
+    <div class="tour-img"></div>
+    <div class="tour-content">
+      <h3>Satara Grand Holiday – Full Day Tour</h3>
+      <ul>
+        <li><span>1</span> Satara Bus Stand – Starting Point</li>
+        <li><span>2</span> Kaas Plateau – Valley of Flowers</li>
+        <li><span>3</span> Bamnoli – Lake & Boat Rides</li>
+        <li><span>4</span> Thoseghar Waterfall – Majestic 500ft Falls</li>
+        <li><span>5</span> Chalkewadi Windmills – Scenic Views</li>
+                <li><span>5</span> And Many More...</li>
+
+      </ul>
+      <div class="tour-footer">
+        <strong>Price<br><span class="price blue">₹5000</span></strong>
+<a
+  class="btn green"
+  href="https://wa.me/918624805973?text=Hi%20Tourably%20%F0%9F%91%8B%0A%0AI%20am%20interested%20in%20the%20Satara%20Grand%20Holiday%20%E2%80%93%20Full%20Day%20Tour.%0A%0APlaces%20included%3A%0A%E2%80%A2%20Satara%20Bus%20Stand%20(Start)%0A%E2%80%A2%20Kaas%20Plateau%0A%E2%80%A2%20Bamnoli%20(Lake%20%26%20Boat%20Ride)%0A%E2%80%A2%20Thoseghar%20Waterfall%0A%E2%80%A2%20Chalkewadi%20Windmills%0A%E2%80%A2%20And%20many%20more%0A%0ATotal%20cost%20mentioned%3A%20%E2%82%B95000%0A%0APlease%20provide%20complete%20details%2C%20itinerary%2C%20and%20availability.%0AThank%20you!"
+  target="_blank"
+>
+  Book Now
+</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="single">
+  <h2>Single‑Spot Packages</h2>
+  <p class="sub">Best for short trips or quick visits</p>
+  <div class="grid">
+    <a class="spot yellow" href="/HTML/Kashibai Museum.html">
+      <div class="spot-img"></div>
+      <h4>Kashibai Museum</h4>
+      <p>Explore the historic museum showcasing local heritage and artifacts</p>
+      <strong class="price yellow">₹500–₹700</strong>
+      <span class="btn yellow">View Details</span>
+    </a>
+    <a class="spot blue" href="/HTML/pangaredharan.html">
+      <div class="spot-img"></div>
+      <h4>Pangare Dharan</h4>
+      <p>Beautiful dam with stunning views perfect for a peaceful day out</p>
+      <strong class="price blue">₹600–₹800</strong>
+      <span class="btn blue">View Details</span>
+    </a>
+    <a class="spot green" href="/HTML/mandapghal.html">
+      <div class="spot-img"></div>
+      <h4>Mandap Ghal</h4>
+      <p>Ancient cave formations and scenic hill landscape for adventurers</p>
+      <strong class="price green">₹400–₹500</strong>
+      <span class="btn green">View Details</span>
+    </a>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="map-section">
+  <h2>View Your Journey</h2>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/d/embed?mid=1LGNKRaTQzxfNnuAaWmhH9Yn3cGIG2Zg&ehbc=2E312F&noprof=1"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
+
+
+
+
+
+<footer class="tourably-footer">
+  <div class="tourably-footer-inner">
+
+    <div class="tourably-footer-brand">
+      
+      <h2>Tourably</h2>
+      <p>Discover famous and hidden places across Satara with smart planning and curated journeys.</p>
+     <div class="tourably-socials">
+    <!-- WhatsApp chat link -->
+    <a href="https://whatsapp.com/channel/0029VbBZK8H9RZAV3voVBf1Y" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    
+    <!-- Instagram profile link -->
+    <a href="https://www.instagram.com/tourablyinc.7
+" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    
+    <!-- Facebook profile/page link -->
+    <a href="https://www.facebook.com/yourusername" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    
+    <!-- X (formerly Twitter) profile link -->
+    <a href="https://twitter.com/TourablyInc07" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    
+    <!-- Telegram link -->
+    <a href="https://t.me/TourablyOfficial" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+</div>
+
+        </div>
+
+ 
+    <div class="tourably-footer-col">
+      <h4>Explore</h4>
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">Tours</a>
+      <a href="#">Packages</a>
+    </div>
+
+    <div class="tourably-footer-col">
+      <h4>Popular Places</h4>
+      <a href="#">Kaas Plateau</a>
+      <a href="#">Thoseghar Falls</a>
+      <a href="#">Sajjangad Fort</a>
+      <a href="#">Chalkewadi</a>
+    </div>
+
+    <div class="tourably-footer-col">
+      <h4>Contact</h4>
+      <span>📍 Satara, Maharashtra</span>
+      <span>📧 contact@tourably.com</span>
+      <span>📞 +91 9XXXXXXXXX</span>
+    </div>
+
+  </div>
+
+  <div class="tourably-footer-bottom">
+    © 2025 Tourably. All rights reserved.
+  </div>
+</footer><script>
+const searchInput = document.querySelector("#search");
+let activeCategory = "all";
+
+
+/******************************
+ * GLOBAL VARIABLES
+ ******************************/
+const carousel = document.querySelector(".cards-carousel");
+const container = document.querySelector(".cards-container");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+const GAP = 24;              // same as CSS gap
+const SLIDE_TIME = 600;      // ms
+const AUTO_DELAY = 4000;     // ms
+
+let index = 1;
+let cardWidth = 0;
+let autoSlide;
+
+/******************************
+ * INITIALIZE CAROUSEL
+ ******************************/
+function initCarousel() {
+  // Remove old clones
+  container.querySelectorAll(".clone").forEach(c => c.remove());
+
+  // Get visible (real) cards only
+  const realCards = Array.from(container.children).filter(
+    card => !card.classList.contains("clone") &&
+            !card.classList.contains("hide")
+  );
+
+  if (realCards.length === 0) return;
+
+  // Calculate width
+  cardWidth = realCards[0].offsetWidth + GAP;
+  index = 1;
+
+  // Create clones
+  const firstClone = realCards[0].cloneNode(true);
+  const lastClone  = realCards[realCards.length - 1].cloneNode(true);
+
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
+
+  container.insertBefore(lastClone, realCards[0]);
+  container.appendChild(firstClone);
+
+  // Set start position
+  container.style.transition = "none";
+  container.style.transform = `translateX(${-cardWidth * index}px)`;
+}
+
+/******************************
+ * MOVE FUNCTIONS
+ ******************************/
+function moveNext() {
+  index++;
+  container.style.transition = `transform ${SLIDE_TIME}ms ease`;
+  container.style.transform = `translateX(${-cardWidth * index}px)`;
+}
+
+function movePrev() {
+  index--;
+  container.style.transition = `transform ${SLIDE_TIME}ms ease`;
+  container.style.transform = `translateX(${-cardWidth * index}px)`;
+}
+
+/******************************
+ * INFINITE LOOP HANDLING
+ ******************************/
+container.addEventListener("transitionend", () => {
+  const children = container.children;
+
+  if (!children[index]) return;
+
+  if (children[index].classList.contains("clone")) {
+    container.style.transition = "none";
+
+    if (index === children.length - 1) {
+      index = 1; // jumped after last real card
+    } else if (index === 0) {
+      index = children.length - 2; // jumped before first real card
+    }
+
+    container.style.transform = `translateX(${-cardWidth * index}px)`;
+  }
+});
+
+/******************************
+ * BUTTON EVENTS
+ ******************************/
+nextBtn.addEventListener("click", moveNext);
+prevBtn.addEventListener("click", movePrev);
+
+/******************************
+ * AUTO SLIDE
+ ******************************/
+function startAutoSlide() {
+  autoSlide = setInterval(moveNext, AUTO_DELAY);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+carousel.addEventListener("mouseenter", stopAutoSlide);
+carousel.addEventListener("mouseleave", startAutoSlide);
+
+/******************************
+ * FILTER LOGIC (IMPORTANT)
+ ******************************/
+function applyFilters() {
+  const text = searchInput.value.trim().toLowerCase();
+
+  // Only REAL cards (ignore clones)
+  const cards = Array.from(container.children).filter(
+    card => !card.classList.contains("clone")
+  );
+
+  cards.forEach(card => {
+    const category = card.dataset.category || "";
+    const title = card.querySelector("h4").innerText.toLowerCase();
+
+    const matchCategory =
+      activeCategory === "all" || category === activeCategory;
+
+    const matchSearch = title.includes(text);
+
+    if (matchCategory && matchSearch) {
+      card.classList.remove("hide");
+    } else {
+      card.classList.add("hide");
+    }
+  });
+
+  // Rebuild carousel after filtering
+  initCarousel();
+}
+
+searchInput.addEventListener("input", applyFilters);
+
+/******************************
+ * FILTER BUTTON EXAMPLE
+ ******************************/document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b =>
+      b.classList.remove("active")
+    );
+
+    btn.classList.add("active");
+    activeCategory = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+/******************************
+ * START EVERYTHING
+ ******************************/
+window.addEventListener("load", () => {
+  initCarousel();
+  startAutoSlide();
+});
+
+window.addEventListener("resize", () => {
+  initCarousel();
+});
+
+</script>
+
+
+<!-- Floating AI Agents -->
+<div class="ai-agents">
+  <a href="/HTML/ai.html" class="agent-icon" title="Go to Homepage">
+    <img src="/Images/aiagent.webp" alt="Agent 1">
+  </a>
+</div>
+
+</body>
+</html>
